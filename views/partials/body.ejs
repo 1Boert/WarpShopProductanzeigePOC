@@ -1,0 +1,26 @@
+<h1>Herrrrrrrrrrrrrzlich Wilkommen im Produktanzeige</h1>
+
+<form action="/getParams" method="post">
+  <label>Preis Von: </label><input type="number" name="preisvon" />
+  <label>Preis Bis: </label><input type="number" name="preisbis" />
+  <label>Kategorie: </label><input type="text" name="category" />
+  <input type="submit" value="Send" />
+</form>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Preis</th>
+      <th scope="col">Kategorie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       
+        <td>1</td>
+        <td> <%= preis %>! </td>
+    </tr>
+  </tbody>
+</table>
