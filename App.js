@@ -5,7 +5,7 @@ const antonia = require("./routes/warpshop")
 //app.use(express.static('public'));
 
 
-
+/*
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -17,13 +17,16 @@ app.get('/', function(req, res) {
     res.render('pages/index');
 });
 
-
+*/
+app.use(express.static('public'))
 
 app.listen(PORT, () => {
     console.log("ick bin auf port" + PORT);
 });
 
 const Warpshop = require("./models/warpshop.model");
+
+/*
 app.use(express.urlencoded());
 app.post('/getParams', function (req, res, next) {
     const preisvon = req.body.preisvon;
@@ -39,3 +42,38 @@ app.post('/getParams', function (req, res, next) {
     });
     res.render('pages/index', {preisvon: "10"});
 });
+*/
+
+
+console.log("check1")
+setTimeout(() => {
+    findRndN3(4, (succMsg, randNo) => {
+        console.log(succMsg + "\nNumber: " + randNo);
+    },
+        errMsg => {
+            console.log(errMsg);
+        });
+})
+
+
+
+
+
+function doSthCompl() {
+    let x = 0;
+    for (let i = 0; i < 1_000_000_000; i++) {
+        x += Math.sqrt(i);
+    }
+
+    return x;
+}
+
+const findRndN3 = (maxNo, succCallback, errCallback) => {
+    doSthCompl();
+    let rndNu = Math.floor(Math.random() * maxNo);
+    if (rndNu != 3) {
+        succCallback("successlol", rndNu);
+    } else {
+        errCallback("3 found :/");
+    }
+}

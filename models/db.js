@@ -18,5 +18,5 @@ con.connect( error => {
     console.log("Succesfully connected to the database");
 });
 
-
+console.log("db.js")
  module.exports = con;
